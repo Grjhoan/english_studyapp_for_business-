@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Silkscreen:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #00FF00;
+  --surface: #F0F0F0;
+  --border: #CCCCCC;
+  --border-dark: #111111;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --bg-retro: #F5F3EC;
+}
+
+/* Custom retro styling */
+body {
+  background-color: var(--bg-retro);
+  color: var(--text-primary);
+  font-family: 'Space Mono', 'Courier New', Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Dotted ruler edges inspired by retro styleguide */
+.retro-ruler-border {
+  background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
+  background-position: top;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+
+/* Retro pixelated titlebars */
+.retro-titlebar {
+  background: repeating-linear-gradient(
+    45deg,
+    #d9d9d9,
+    #d9d9d9 2px,
+    #e8e8e8 2px,
+    #e8e8e8 4px
+  );
+  border-bottom: 2px solid #000000;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-left: 1px solid #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 1px solid #00ff00;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* Button click tactile push down */
+.retro-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000000 !important;
+}
+
+/* Focus ring in neon green */
+*:focus-visible {
+  outline: 2px solid #00FF00 !important;
+  outline-offset: 1px;
+}
